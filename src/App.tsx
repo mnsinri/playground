@@ -9,6 +9,7 @@ import { useWorks } from "./hooks";
 
 export const App: React.FC = () => {
   const works = useWorks();
+  console.log(`App, baseURL:${PUBLIC_URL}`);
   return (
     <BrowserRouter basename={PUBLIC_URL}>
       <ThemeProvider>
@@ -23,7 +24,7 @@ export const App: React.FC = () => {
                   key={work.id}
                 />
               ))}
-              {/* <Route path="*" element={<Navigate to="/" />} /> */}
+              <Route path="*" element={<Navigate to="/" />} />
             </Routes>
           </AnimatePresence>
         </WorksProvider>

@@ -59,6 +59,7 @@ export const Preview: React.FC = () => {
 };
 
 export const Scene: React.FC = () => {
+  console.log("SampleScene");
   return (
     <div style={{ width: "100vw", height: "100vh" }}>
       <Canvas>
