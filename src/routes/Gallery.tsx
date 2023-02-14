@@ -6,7 +6,6 @@ import { Overlay } from "@components/Overlay";
 
 export const Gallery: React.FC = () => {
   const { theme } = useTheme();
-  console.log("Gallery");
   return (
     <div
       style={{
