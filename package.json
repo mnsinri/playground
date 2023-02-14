@@ -37,7 +37,8 @@
     "webpack-dev-server": "^4.11.1"
   },
   "scripts": {
-    "build": "webpack",
+    "build": "webpack --mode development",
+    "prod": "webpack --mode production",
     "serve": "webpack serve --open",
     "format": "prettier --write ./src"
   }

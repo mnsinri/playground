@@ -60,14 +60,16 @@ export const Preview: React.FC = () => {
 
 export const Scene: React.FC = () => {
   return (
-    <Canvas>
-      <ComingSoonContents />
-      <OrbitControls
-        enableZoom={false}
-        enablePan={false}
-        minPolarAngle={Math.PI / 2}
-        maxPolarAngle={Math.PI / 2}
-      />
-    </Canvas>
+    <div style={{ width: "100vw", height: "100vh" }}>
+      <Canvas>
+        <ComingSoonContents />
+        <OrbitControls
+          enableZoom={false}
+          enablePan={false}
+          minPolarAngle={Math.PI / 2}
+          maxPolarAngle={Math.PI / 2}
+        />
+      </Canvas>
+    </div>
   );
 };
