@@ -9,9 +9,9 @@ import { useWorks } from "./hooks";
 
 export const App: React.FC = () => {
   const works = useWorks();
-
+  console.log(PUBLIC_URL);
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={PUBLIC_URL}>
       <ThemeProvider>
         <WorksProvider>
           <AnimatePresence mode="wait">

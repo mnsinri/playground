@@ -1,7 +1,6 @@
 const path = require("path");
 
 module.exports = {
-  mode: "development",
   entry: "./src/index.tsx",
   output: {
     path: path.join(__dirname, "dist"),
@@ -35,15 +34,8 @@ module.exports = {
       },
     ],
   },
-  devServer: {
-    static: {
-      directory: path.join(__dirname, "dist"),
-    },
-    historyApiFallback: true,
-    port: 3000,
-  },
   resolve: {
-    extensions: [".ts", ".tsx", ".js", ".json"],
+    extensions: [".ts", ".tsx", ".js"],
     alias : {
       "@components": path.resolve(__dirname, 'src/components'),
       "@styles": path.resolve(__dirname, 'src/styles'),
