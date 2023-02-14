@@ -11,7 +11,7 @@ export const App: React.FC = () => {
   const works = useWorks();
 
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <BrowserRouter>
       <ThemeProvider>
         <WorksProvider>
           <AnimatePresence mode="wait">
