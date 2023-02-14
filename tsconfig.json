@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "target": "ES2020",
+    "module": "ES2020",
+    "outDir": "dist",
+    "jsx": "react",
+    "moduleResolution": "Node",
+    "lib": ["ES2020", "DOM"],
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "./",
+    "paths": {
+      "@components/*": ["src/components/*"],
+      "@components": ["src/components"],
+      "@styles/*": ["src/styles/*"],
+      "@styles": ["src/styles"],
+      "@routes/*": ["src/routes/*"],
+      "@routes": ["src/routes"],
+      "@hooks/*": ["src/hooks/*"],
+      "@hooks": ["src/hooks"],
+      "@src/*": ["src/*"],
+    },
+    "typeRoots": ["@types", "node_modules/@types"],
+    "resolveJsonModule": true,
+  },
+  "exclude": ["./node_modules"]
+}
