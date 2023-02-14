@@ -24,7 +24,7 @@ export const App: React.FC = () => {
                   key={work.id}
                 />
               ))}
-              <Route path="*" element={<Navigate to="/" />} />
+              {/* <Route path="*" element={<Navigate to="/" />} /> */}
             </Routes>
           </AnimatePresence>
         </WorksProvider>
