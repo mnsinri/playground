@@ -83,7 +83,7 @@ export const Frame: React.FC<FrameProps> = ({
     >
       <planeGeometry />
       <meshStandardMaterial>
-        <RenderTexture attach="map" anisotropy={16}>
+        <RenderTexture attach="map" anisotropy={16} frames={1}>
           {renderTextureContents}
         </RenderTexture>
       </meshStandardMaterial>
