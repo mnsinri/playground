@@ -17,7 +17,7 @@ function ScrollItems({ eachGap, scale }: ScrollItemsProps) {
   const scroll = useScroll();
   const navigate = useNavigate();
   const works = useWorks();
-  const listToRender = [works[1], works[1], works[1], works[1], works[1]];
+  const listToRender = [works[0], works[1], works[1], works[1], works[1]];
   const length = listToRender.length;
 
   useFrame(() => {
