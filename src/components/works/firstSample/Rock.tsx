@@ -6,6 +6,7 @@ import * as THREE from "three";
 import React, { useEffect, useRef, useState } from "react";
 import { useGLTF, useAnimations } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
+import { AnimationMixer } from "three";
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -261,11 +262,14 @@ type ActionName =
 type GLTFActions = Record<ActionName, THREE.AnimationAction>;
 
 export default function Model(props: JSX.IntrinsicElements["group"]) {
-  const group = useRef<THREE.Group>();
+  const group = useRef<THREE.Group>(null!);
   const { nodes, materials, animations } = useGLTF(
-    "/assets/models/rock.gltf"
+    "./assets/models/rock.gltf"
   ) as unknown as GLTFResult;
-  const { actions, mixer } = useAnimations(animations, group);
+  const { actions, mixer } = useAnimations(animations, group) as unknown as {
+    actions: GLTFActions;
+    mixer: AnimationMixer;
+  };
   const [isPlay, setPlay] = useState(false);
 
   useEffect(() => {
@@ -281,7 +285,7 @@ export default function Model(props: JSX.IntrinsicElements["group"]) {
 
   const onClickHandler = (_) => {
     Object.keys(actions).forEach((key) => {
-      if (isPlay) actions[key].paused = !actions[key].paused;
+      if (isPlay) actions[key].paused = !actions[key]?.paused;
       else actions[key].play();
     });
     setPlay(true);
@@ -1568,4 +1572,4 @@ export default function Model(props: JSX.IntrinsicElements["group"]) {
   );
 }
 
-useGLTF.preload("/assets/models/rock.gltf");
+useGLTF.preload("./assets/models/rock.gltf");
